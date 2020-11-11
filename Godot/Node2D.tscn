@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://World/scifi_platformTiles_32x32.png" type="Texture" id=2]
+[ext_resource path="res://World/pose 3.png" type="Texture" id=4]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 4 ) ],
+"loop": true,
+"name": "Correr",
+"speed": 5.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 64.0
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 0, 1 )
+
+[node name="Player" type="Area2D" parent="."]
+position = Vector2( -64, 207 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+position = Vector2( 376, 88 )
+scale = Vector2( 0.302288, 0.238298 )
+frames = SubResource( 1 )
+animation = "Correr"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 384, 72 )
+shape = SubResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 512, 311 )
+scale = Vector2( 0.914286, 0.813859 )
+texture = ExtResource( 2 )
